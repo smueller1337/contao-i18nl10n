@@ -50,7 +50,7 @@ class InitializeSystemHook extends System
         $userLanguage = "de";
 
         print_r($this->request->getLocale());
-        print_r($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        print_r(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
 
 
         // Fail if no languages were configured
