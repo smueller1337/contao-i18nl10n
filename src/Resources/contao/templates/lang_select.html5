@@ -10,7 +10,7 @@ $urlGenerator = System::getContainer()->get('contao.routing.url_generator');
     <select name="i18nl10n_language" onchange="window.location.href = this.value">
 
         <?php foreach ($this->items as $item) : ?>
-            <option value="{{env::url}}<?php echo $urlGenerator->generate($item['language'] . ' / ' . $item['alias']); ?>" <?= $item['isActive'] ? ' class="active" selected="selected"' : ''; ?>>
+            <option value="{{env::url}}<?php echo $urlGenerator->generate($item['language'] . '/' . $item['alias']); ?>" <?= $item['isActive'] ? ' class="active" selected="selected"' : ''; ?>>
                 <?= $this->languages[\str_replace('-', '_', $item['language'])] ?>
             </option>
         <?php endforeach; ?>

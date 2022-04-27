@@ -11,7 +11,7 @@ $urlGenerator = System::getContainer()->get('contao.routing.url_generator');
         <li class="<?= ($item['class'] ? $item['class'] . ' ' : '') . 'i18nl10n_lang i18nl10n_lang_' . $item['language'] . ($item['isActive'] ? ' active' : ''); ?>">
             <?php if (!$item['isActive']) : // disable link if active 
             ?>
-                <a href="{{env::url}}<?php echo $urlGenerator->generate($item['language'] . ' / ' . $item['alias']); ?>" title="<?= $item['title']; ?>">
+                <a href="{{env::url}}<?php echo $urlGenerator->generate($item['language'] . '/' . $item['alias']); ?>" title="<?= $item['title']; ?>">
                 <?php endif; ?>
                 <i class="i18nl10n_flag">
                     <img src="bundles/blioxxxi18nl10n/img/flag_icons/<?= \str_replace('-', '_', $item['language']); ?>.png">
