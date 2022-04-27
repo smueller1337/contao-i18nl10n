@@ -66,5 +66,7 @@ class InitializeSystemHook extends System
         if (!\in_array($userLanguage, $languages['languages'])) {
             $GLOBALS['TL_LANGUAGE'] = $languages['default'];
         }
+
+        print_r($GLOBALS['TL_LANGUAGE']);
     }
 }

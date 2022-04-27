@@ -14,13 +14,16 @@
 
 namespace Verstaerker\I18nl10nBundle\Classes;
 
+use Contao\Controller;
+use Contao\PageModel;
+
 /**
  * Class I18nl10nFrontend
  * Common frontend functions go here
  *
  * @package    Controller
  */
-class I18nl10nFrontend extends \Controller
+class I18nl10nFrontend extends Controller
 {
     /**
      * Load database object
@@ -114,10 +117,10 @@ class I18nl10nFrontend extends \Controller
 
                         switch ($item['type']) {
                             case 'forward':
-                                $intForwardId = $item['jumpTo'] ?: \PageModel::findFirstPublishedByPid($item['id'])
+                                $intForwardId = $item['jumpTo'] ?: PageModel::findFirstPublishedByPid($item['id'])
                                     ->current()->id;
 
-                                $arrPage = \PageModel::findWithDetails($intForwardId)->row();
+                                $arrPage = PageModel::findWithDetails($intForwardId)->row();
 
                                 $item['href']       = $this->generateFrontendUrl($arrPage);
                                 break;
@@ -132,6 +135,8 @@ class I18nl10nFrontend extends \Controller
                                 $item['href'] = $this->generateFrontendUrl($item);
                                 break;
                         }
+
+                        print_r($item['href']);
 
                         $item['pageTitle'] = specialchars($row['pageTitle'], true);
                         $item['title'] = specialchars($row['title'], true);
