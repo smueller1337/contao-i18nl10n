@@ -469,10 +469,28 @@ class tl_page_l10n extends tl_page
      */
     public function extendRootPalettes()
     {
-        if (version_compare(VERSION, '4.5', '>=')) {
+        if (version_compare(VERSION, '4.10', '>=')) {
             $GLOBALS['TL_DCA']['tl_page']['palettes']['root'] = str_replace(
                 'language,fallback,disableLanguageRedirect;',
                 'language,fallback,disableLanguageRedirect;{module_i18nl10n},i18nl10n_localizations;',
+                $GLOBALS['TL_DCA']['tl_page']['palettes']['root']
+            );
+
+            $GLOBALS['TL_DCA']['tl_page']['palettes']['rootfallback'] = str_replace(
+                'language,fallback,disableLanguageRedirect;',
+                'language,fallback,disableLanguageRedirect;{module_i18nl10n},i18nl10n_localizations;',
+                $GLOBALS['TL_DCA']['tl_page']['palettes']['root']
+            );
+        }
+        if (version_compare(VERSION, '4.5', '>=')) {
+            $GLOBALS['TL_DCA']['tl_page']['palettes']['root'] = str_replace(
+                'language,fallback;',
+                'language,fallback;{module_i18nl10n},i18nl10n_localizations;',
+                $GLOBALS['TL_DCA']['tl_page']['palettes']['root']
+            );
+            $GLOBALS['TL_DCA']['tl_page']['palettes']['rootfallback'] = str_replace(
+                'language,fallback;',
+                'language,fallback;{module_i18nl10n},i18nl10n_localizations;',
                 $GLOBALS['TL_DCA']['tl_page']['palettes']['root']
             );
         } else {
