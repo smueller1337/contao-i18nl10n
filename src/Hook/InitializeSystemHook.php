@@ -2,6 +2,7 @@
 
 namespace Verstaerker\I18nl10nBundle\Hook;
 
+use Contao\Input;
 use Contao\System;
 use Symfony\Component\HttpFoundation\Request;
 use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
@@ -47,6 +48,11 @@ class InitializeSystemHook extends System
         $arrLanguages = I18nl10n::getInstance()->getAvailableLanguages();
         $userLanguage = $this->request->getLocale();
 
+        if (Input::get('debug') == "1") {
+            print_r($arrLanguages);
+            print_r($userLanguage);
+        }
+
 
         // Fail if no languages were configured
         if (\count($arrLanguages) === 0) {
@@ -55,6 +61,7 @@ class InitializeSystemHook extends System
 
         // Fallback to default language if language of request does not exist
         $languages = $arrLanguages[$_SERVER['HTTP_HOST']] ?: $arrLanguages['*'];
+        print_r($languages);
         if (!\in_array($userLanguage, $languages['languages'])) {
             $GLOBALS['TL_LANGUAGE'] = $languages['default'];
         }
