@@ -1,22 +1,31 @@
+<?php
+
+use \Contao\System;
+
+$urlGenerator = System::getContainer()->get('contao.routing.url_generator');
+
+?>
+
 <ul>
-    <?php foreach ($this->items as $item): ?>
+    <?php foreach ($this->items as $item) : ?>
         <li class="<?= ($item['class'] ? $item['class'] . ' ' : '') . 'i18nl10n_lang i18nl10n_lang_' . $item['language'] . ($item['isActive'] ? ' active' : ''); ?>">
-            <?php if (!$item['isActive']): // disable link if active ?>
-            <a href="<?= $this->generateFrontendUrl($item, $this->uriParams); ?>"
-               title="<?= $item['title']; ?>">
+            <?php if (!$item['isActive']) : // disable link if active 
+            ?>
+                <a href="{{env::url}}<?php echo $urlGenerator->generate($item['language'] . ' / ' . $item['alias']); ?>" title="<?= $item['title']; ?>">
                 <?php endif; ?>
                 <i class="i18nl10n_flag">
-                    <img src="bundles/verstaerkeri18nl10n/img/flag_icons/<?= \str_replace('-', '_', $item['language']); ?>.png">
+                    <img src="bundles/blioxxxi18nl10n/img/flag_icons/<?= \str_replace('-', '_', $item['language']); ?>.png">
                 </i>
-            <span class="i18nl10n_label">
-                <?= $this->languages[\str_replace('-', '_', $item['language'])]; ?>
-            </span>
-            <span class="i18nl10n_iso">
-                <?= $item['language']; ?>
-            </span>
-                <?php if (!$item['isActive']): // disable link if active ?>
-            </a>
-        <?php endif; ?>
+                <span class="i18nl10n_label">
+                    <?= $this->languages[\str_replace('-', '_', $item['language'])]; ?>
+                </span>
+                <span class="i18nl10n_iso">
+                    <?= $item['language']; ?>
+                </span>
+                <?php if (!$item['isActive']) : // disable link if active 
+                ?>
+                </a>
+            <?php endif; ?>
         </li>
     <?php endforeach; ?>
 </ul>

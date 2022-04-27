@@ -181,7 +181,7 @@ class ModuleI18nl10nLanguageSelection extends Module
 
         // Add stylesheets
         if ($this->i18nl10n_langStyle !== 'disable') {
-            $assetsUrl = 'bundles/verstaerkeri18nl10n/';
+            $assetsUrl = 'bundles/blioxxxi18nl10n/';
 
             // Add global and selected style
             $GLOBALS['TL_CSS'][] = $assetsUrl . 'css/i18nl10n_lang.css';

@@ -18,10 +18,10 @@
 // Extend header includes
 if (TL_MODE == 'BE') {
     // CSS files
-    $GLOBALS['TL_CSS'][] = 'bundles/verstaerkeri18nl10n/css/style.css';
+    $GLOBALS['TL_CSS'][] = 'bundles/blioxxxi18nl10n/css/style.css';
 
     // JS files
-    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/verstaerkeri18nl10n/js/i18nl10n.js';
+    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/blioxxxi18nl10n/js/i18nl10n.js';
 }
 
 // Append be module to sidebar
@@ -31,7 +31,7 @@ if (TL_MODE == 'BE') {
     [
         'i18nl10n' => [
             'tables' => ['tl_page_i18nl10n'],
-            'icon'   => 'bundles/verstaerkeri18nl10n/img/i18nl10n.png'
+            'icon'   => 'bundles/blioxxxi18nl10n/img/i18nl10n.png'
         ]
     ]
 );

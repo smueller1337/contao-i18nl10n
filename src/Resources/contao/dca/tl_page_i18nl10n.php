@@ -258,7 +258,7 @@ class tl_page_i18nl10n extends tl_page
         return \sprintf(
             '<span class="i18nl10n_page"><img class="i18nl10n_flag%1$s" src="%2$s"> %3$s [%4$s]</span>',
             $row['i18nl10n_published'] ? '' : ' is--invisible',
-            'bundles/verstaerkeri18nl10n/img/flag_icons/' . \str_replace('-', '_', $row['language']) . '.png',
+            'bundles/blioxxxi18nl10n/img/flag_icons/' . \str_replace('-', '_', $row['language']) . '.png',
             \Contao\StringUtil::specialchars($row['title']),
             $GLOBALS['TL_LANG']['LNG'][
                 \str_replace('-', '_', $row['language'])
@@ -290,7 +290,7 @@ class tl_page_i18nl10n extends tl_page
     private function localizeAllMessage()
     {
         $arrLanguages       = I18nl10n::getInstance()->getAvailableLanguages(true);
-        $strFlagPath        = 'bundles/verstaerkeri18nl10n/img/flag_icons/';
+        $strFlagPath        = 'bundles/blioxxxi18nl10n/img/flag_icons/';
         $strMessage         = $GLOBALS['TL_LANG']['tl_page_i18nl10n']['msg_localize_all'];
         $strDomainLanguages = '';
 

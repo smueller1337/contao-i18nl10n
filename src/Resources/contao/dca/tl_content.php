@@ -75,8 +75,8 @@ class tl_content_l10n extends tl_content
     {
         // Prepare icon link
         $langIcon = $arrRow['language']
-            ? 'bundles/verstaerkeri18nl10n/img/flag_icons/' . $arrRow['language'] . '.png'
-            : 'bundles/verstaerkeri18nl10n/img/i18nl10n.png';
+            ? 'bundles/blioxxxi18nl10n/img/flag_icons/' . $arrRow['language'] . '.png'
+            : 'bundles/blioxxxi18nl10n/img/i18nl10n.png';
 
         // create L10N information insert
         $strL10nInsert = sprintf(
