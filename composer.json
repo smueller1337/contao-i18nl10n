@@ -1,7 +1,7 @@
 {
   "name": "blioxxx/contao-i18nl10n",
   "type": "symfony-bundle",
-  "description": "The simplest way to create and manage multi-language sites with Contao.",
+  "description": "The simplest way to create and manage multi-language sites with Contao 4.9.x and newer.",
   "keywords": [
     "Language",
     "Multilingual",
@@ -11,6 +11,28 @@
   ],
   "homepage": "https://www.pirok.net",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Mirco Kibiger",
+      "role": "Developer"
+    },
+    {
+      "name": "Zlatko Nikolov",
+      "role": "Developer"
+    },
+    {
+      "name": "Claudio De Facci",
+      "email": "claudio@exploreimpact.de",
+      "homepage": "https://exploreimpact.de",
+      "role": "Developer"
+    },
+    {
+      "name": "Patric Eberle",
+      "email": "line-in@derverstaerker.ch",
+      "homepage": "http://www.derverstaerker.ch",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "php": "^7.3",
     "contao/core-bundle": "^4.9",
