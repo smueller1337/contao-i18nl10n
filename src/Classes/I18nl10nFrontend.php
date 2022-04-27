@@ -136,8 +136,6 @@ class I18nl10nFrontend extends Controller
                                 break;
                         }
 
-                        print_r($item['href']);
-
                         $item['pageTitle'] = specialchars($row['pageTitle'], true);
                         $item['title'] = specialchars($row['title'], true);
                         $item['link'] = $item['title'];
