@@ -471,8 +471,8 @@ class tl_page_l10n extends tl_page
     {
         if (version_compare(VERSION, '4.5', '>=')) {
             $GLOBALS['TL_DCA']['tl_page']['palettes']['root'] = str_replace(
-                'language,fallback;',
-                'language,fallback;{module_i18nl10n},i18nl10n_localizations;',
+                'language,fallback,disableLanguageRedirect;',
+                'language,fallback,disableLanguageRedirect;{module_i18nl10n},i18nl10n_localizations;',
                 $GLOBALS['TL_DCA']['tl_page']['palettes']['root']
             );
         } else {
