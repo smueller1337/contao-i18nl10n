@@ -46,12 +46,7 @@ class InitializeSystemHook extends System
 
         // Get locale information for system and user
         $arrLanguages = I18nl10n::getInstance()->getAvailableLanguages();
-        //$userLanguage = $this->request->getLocale();
-        $userLanguage = "de";
-
-        print_r($this->request->getLocale());
-        print_r($this->request->getPreferredLanguage());
-        print_r(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
+        $userLanguage = $this->request->getPreferredLanguage();
 
 
         // Fail if no languages were configured
@@ -61,8 +56,17 @@ class InitializeSystemHook extends System
 
         // Fallback to default language if language of request does not exist
         $languages = $arrLanguages[$_SERVER['HTTP_HOST']] ?: $arrLanguages['*'];
+
+        // check if preferred language is in language array
         if (!\in_array($userLanguage, $languages['languages'])) {
-            $GLOBALS['TL_LANGUAGE'] = $languages['default'];
+            $shortenUserLanugage = substr($userLanguage, 0, 2);
+
+            // check again
+            if (!\in_array($shortenUserLanugage, $languages['languages'])) {
+                $GLOBALS['TL_LANGUAGE'] = $languages['default'];
+            } else {
+                $GLOBALS['TL_LANGUAGE'] = $shortenUserLanugage;
+            }
         } else {
             $GLOBALS['TL_LANGUAGE'] = $userLanguage;
         }
