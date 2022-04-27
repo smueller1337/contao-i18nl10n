@@ -12,9 +12,9 @@
  * @license     LGPLv3 http://www.gnu.org/licenses/lgpl-3.0.html
  */
 
-namespace Verstaerker\I18nl10nBundle\Widgets;
+namespace Blioxxx\I18nl10nBundle\Widgets;
 
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
 
 class I18nl10nMetaWizard extends \MetaWizard
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\ContaoManager;
+namespace Blioxxx\I18nl10nBundle\ContaoManager;
 
-use Verstaerker\I18nl10nBundle\VerstaerkerI18nl10nBundle;
+use Blioxxx\I18nl10nBundle\BlioxxxI18nl10nBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
@@ -21,7 +21,7 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create(VerstaerkerI18nl10nBundle::class)
+            BundleConfig::create(BlioxxxI18nl10nBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class])
                 ->setReplace(['i18nl10n']),
         ];

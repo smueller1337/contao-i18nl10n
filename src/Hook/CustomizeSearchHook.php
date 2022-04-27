@@ -1,10 +1,10 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Hook;
+namespace Blioxxx\I18nl10nBundle\Hook;
 
 /**
  * Class CustomizeSearchHook
- * @package Verstaerker\I18nl10nBundle\Hook
+ * @package Blioxxx\I18nl10nBundle\Hook
  *
  * Implementation of i18nl10n search logic.
  */

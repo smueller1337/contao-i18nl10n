@@ -1,10 +1,10 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Hook;
+namespace Blioxxx\I18nl10nBundle\Hook;
 
 /**
  * Class IsVisibleElementHook
- * @package Verstaerker\I18nl10nBundle\Hook
+ * @package Blioxxx\I18nl10nBundle\Hook
  *
  * Determine when to show content elements in relation to the current page language.
  */

@@ -39,44 +39,44 @@ if (TL_MODE == 'BE') {
 /**
  * FRONT END MODULES
  */
-$GLOBALS['FE_MOD']['i18nl10n']['i18nl10nLanguageSelection'] = 'Verstaerker\I18nl10nBundle\Modules\ModuleI18nl10nLanguageSelection';
+$GLOBALS['FE_MOD']['i18nl10n']['i18nl10nLanguageSelection'] = 'Blioxxx\I18nl10nBundle\Modules\ModuleI18nl10nLanguageSelection';
 
 
 /**
  * HOOKS
  */
-$GLOBALS['TL_HOOKS']['initializeSystem'][]      = ['Verstaerker\I18nl10nBundle\Hook\InitializeSystemHook', 'initializeSystem'];
-$GLOBALS['TL_HOOKS']['generateFrontendUrl'][]   = ['Verstaerker\I18nl10nBundle\Hook\GenerateFrontendUrlHook', 'generateFrontendUrl'];
-$GLOBALS['TL_HOOKS']['getPageIdFromUrl'][]      = ['Verstaerker\I18nl10nBundle\Hook\GetPageIdFromUrlHook', 'getPageIdFromUrl'];
-$GLOBALS['TL_HOOKS']['generateBreadcrumb'][]    = ['Verstaerker\I18nl10nBundle\Hook\GenerateBreadcrumbHook', 'generateBreadcrumb'];
-$GLOBALS['TL_HOOKS']['executePostActions'][]    = ['Verstaerker\I18nl10nBundle\Hook\ExecutePostActionsHook', 'executePostActions'];
-$GLOBALS['TL_HOOKS']['isVisibleElement'][]      = ['Verstaerker\I18nl10nBundle\Hook\IsVisibleElementHook', 'isVisibleElement'];
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][]     = ['Verstaerker\I18nl10nBundle\Hook\ReplaceInsertTagsHook', 'replaceInsertTags'];
-$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Verstaerker\I18nl10nBundle\Hook\LoadDataContainerHook', 'setLanguages'];
-$GLOBALS['TL_HOOKS']['getArticle'][]            = ['Verstaerker\I18nl10nBundle\Hook\GetArticleHook', 'checkIfEmpty'];
+$GLOBALS['TL_HOOKS']['initializeSystem'][]      = ['Blioxxx\I18nl10nBundle\Hook\InitializeSystemHook', 'initializeSystem'];
+$GLOBALS['TL_HOOKS']['generateFrontendUrl'][]   = ['Blioxxx\I18nl10nBundle\Hook\GenerateFrontendUrlHook', 'generateFrontendUrl'];
+$GLOBALS['TL_HOOKS']['getPageIdFromUrl'][]      = ['Blioxxx\I18nl10nBundle\Hook\GetPageIdFromUrlHook', 'getPageIdFromUrl'];
+$GLOBALS['TL_HOOKS']['generateBreadcrumb'][]    = ['Blioxxx\I18nl10nBundle\Hook\GenerateBreadcrumbHook', 'generateBreadcrumb'];
+$GLOBALS['TL_HOOKS']['executePostActions'][]    = ['Blioxxx\I18nl10nBundle\Hook\ExecutePostActionsHook', 'executePostActions'];
+$GLOBALS['TL_HOOKS']['isVisibleElement'][]      = ['Blioxxx\I18nl10nBundle\Hook\IsVisibleElementHook', 'isVisibleElement'];
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][]     = ['Blioxxx\I18nl10nBundle\Hook\ReplaceInsertTagsHook', 'replaceInsertTags'];
+$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Blioxxx\I18nl10nBundle\Hook\LoadDataContainerHook', 'setLanguages'];
+$GLOBALS['TL_HOOKS']['getArticle'][]            = ['Blioxxx\I18nl10nBundle\Hook\GetArticleHook', 'checkIfEmpty'];
 
 // Append language selection for tl_content
-$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Verstaerker\I18nl10nBundle\Hook\LoadDataContainerHook', 'appendLanguageSelectCallback'];
+$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Blioxxx\I18nl10nBundle\Hook\LoadDataContainerHook', 'appendLanguageSelectCallback'];
 
 // Append button callback for tl_content to introduce permission
-$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Verstaerker\I18nl10nBundle\Hook\LoadDataContainerHook', 'appendButtonCallback'];
+$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Blioxxx\I18nl10nBundle\Hook\LoadDataContainerHook', 'appendButtonCallback'];
 
 // Append label callback for tl_article labels
-$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Verstaerker\I18nl10nBundle\Hook\LoadDataContainerHook', 'appendLabelCallback'];
+$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Blioxxx\I18nl10nBundle\Hook\LoadDataContainerHook', 'appendLabelCallback'];
 
 // Append child record callback for tl_content labels
-$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Verstaerker\I18nl10nBundle\Hook\LoadDataContainerHook', 'appendChildRecordCallback'];
+$GLOBALS['TL_HOOKS']['loadDataContainer'][]     = ['Blioxxx\I18nl10nBundle\Hook\LoadDataContainerHook', 'appendChildRecordCallback'];
 
 // Search indexation
-$GLOBALS['TL_HOOKS']['indexPage'][]             = ['Verstaerker\I18nl10nBundle\Hook\IndexPageHook', 'indexPage'];
-$GLOBALS['TL_HOOKS']['getSearchablePages'][]    = ['Verstaerker\I18nl10nBundle\Hook\GetSearchablePagesHook', 'getSearchablePages'];
-$GLOBALS['TL_HOOKS']['customizeSearch'][]       = ['Verstaerker\I18nl10nBundle\Hook\CustomizeSearchHook', 'customizeSearch'];
+$GLOBALS['TL_HOOKS']['indexPage'][]             = ['Blioxxx\I18nl10nBundle\Hook\IndexPageHook', 'indexPage'];
+$GLOBALS['TL_HOOKS']['getSearchablePages'][]    = ['Blioxxx\I18nl10nBundle\Hook\GetSearchablePagesHook', 'getSearchablePages'];
+$GLOBALS['TL_HOOKS']['customizeSearch'][]       = ['Blioxxx\I18nl10nBundle\Hook\CustomizeSearchHook', 'customizeSearch'];
 
 
 /**
  * PAGE TYPES
  */
-$GLOBALS['TL_PTY']['regular']                   = 'Verstaerker\I18nl10nBundle\Pages\PageI18nl10nRegular';
+$GLOBALS['TL_PTY']['regular']                   = 'Blioxxx\I18nl10nBundle\Pages\PageI18nl10nRegular';
 
 
 /**
@@ -88,4 +88,4 @@ $GLOBALS['TL_PERMISSIONS'][]                    = 'i18nl10n_languages';
 /**
  * Adding custom widgets
  */
-$GLOBALS['BE_FFL']['i18nl10nMetaWizard']        = 'Verstaerker\I18nl10nBundle\Widgets\I18nl10nMetaWizard';
+$GLOBALS['BE_FFL']['i18nl10nMetaWizard']        = 'Blioxxx\I18nl10nBundle\Widgets\I18nl10nMetaWizard';

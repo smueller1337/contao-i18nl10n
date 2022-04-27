@@ -1,6 +1,6 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Exception;
+namespace Blioxxx\I18nl10nBundle\Exception;
 
 /**
  * Class NoRootPageException

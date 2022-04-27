@@ -12,9 +12,9 @@
  * @license     LGPLv3 http://www.gnu.org/licenses/lgpl-3.0.html
  */
 
-namespace Verstaerker\I18nl10nBundle\Pages;
+namespace Blioxxx\I18nl10nBundle\Pages;
 
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

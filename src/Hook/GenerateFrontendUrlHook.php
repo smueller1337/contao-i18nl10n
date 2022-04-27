@@ -1,12 +1,12 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Hook;
+namespace Blioxxx\I18nl10nBundle\Hook;
 
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
 
 /**
  * Class GenerateFrontendUrlHook
- * @package Verstaerker\I18nl10nBundle\Hook
+ * @package Blioxxx\I18nl10nBundle\Hook
  *
  * Create links to translated pages.
  */

@@ -28,7 +28,7 @@
   },
   "autoload":{
     "psr-4": {
-      "Verstaerker\\I18nl10nBundle\\": "src/"
+      "Blioxxx\\I18nl10nBundle\\": "src/"
     },
     "classmap": [
       "src/Resources/contao/"
@@ -41,7 +41,7 @@
     ]
   },
   "extra":{
-    "contao-manager-plugin": "Verstaerker\\I18nl10nBundle\\ContaoManager\\Plugin"
+    "contao-manager-plugin": "Blioxxx\\I18nl10nBundle\\ContaoManager\\Plugin"
   },
   "config": {
     "allow-plugins": {

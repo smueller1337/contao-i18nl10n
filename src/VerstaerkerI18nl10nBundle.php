@@ -1,6 +1,6 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle;
+namespace Blioxxx\I18nl10nBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -9,6 +9,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @author Claudio De Facci <https://exploreimpact.de>
  */
-class VerstaerkerI18nl10nBundle extends Bundle
+class BlioxxxI18nl10nBundle extends Bundle
 {
 }

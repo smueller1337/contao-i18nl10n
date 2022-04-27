@@ -12,7 +12,7 @@
  * @license     LGPLv3 http://www.gnu.org/licenses/lgpl-3.0.html
  */
 
-namespace Verstaerker\I18nl10nBundle\Classes;
+namespace Blioxxx\I18nl10nBundle\Classes;
 
 use Contao\Controller;
 
@@ -21,7 +21,7 @@ use Contao\Controller;
  *
  * Global Functions for i18nl10n module
  *
- * @package Verstaerker\I18nl10n\Classes
+ * @package Blioxxx\I18nl10n\Classes
  */
 class I18nl10n extends Controller
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Hook;
+namespace Blioxxx\I18nl10nBundle\Hook;
 
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
 
 /**
  * Class ReplaceInsertTagsHook
- * @package Verstaerker\I18nl10nBundle\Hook
+ * @package Blioxxx\I18nl10nBundle\Hook
  *
  * https://docs.contao.org/books/api/extensions/hooks/replaceInsertTags.html
  */

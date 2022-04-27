@@ -8,7 +8,7 @@
  * @license LGPL-3.0+
  */
 
-namespace Verstaerker\I18nl10nBundle\DependencyInjection;
+namespace Blioxxx\I18nl10nBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  *
  * @author Claudio De Facci <https://exploreimpact.de>
  */
-class VerstaerkerI18nl10nExtension extends Extension
+class BlioxxxI18nl10nExtension extends Extension
 {
     /**
      * {@inheritdoc}

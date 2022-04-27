@@ -11,7 +11,7 @@
  * @license     LGPLv3 http://www.gnu.org/licenses/lgpl-3.0.html
  */
 
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
 
 $this->loadLanguageFile('languages');
 $this->loadLanguageFile('tl_page');

@@ -11,14 +11,14 @@
  * @license     LGPLv3 http://www.gnu.org/licenses/lgpl-3.0.html
  */
 
-namespace Verstaerker\I18nl10nBundle\Modules;
+namespace Blioxxx\I18nl10nBundle\Modules;
 
 use Contao\BackendTemplate;
 use Contao\Database;
 use Contao\Input;
 use Contao\Module;
 use Contao\System;
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
 
 /**
  * Class ModuleI18nl10nLanguageSelection

@@ -14,7 +14,7 @@
 
 use Contao\ArrayUtil;
 use Contao\Config;
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
 
 // load language translations
 $this->loadLanguageFile('languages');
@@ -135,7 +135,7 @@ class tl_page_l10n extends tl_page
         $strImgName = $row['i18nl10n_published'] ? 'i18nl10n.png' : 'i18nl10n_invisible.png';
 
         return sprintf(
-            '<a href="%1$s" title="%2$s"><img src="bundles/verstaerkeri18nl10n/img/%3$s"></a>',
+            '<a href="%1$s" title="%2$s"><img src="bundles/blioxxxi18nl10n/img/%3$s"></a>',
             $strButtonUrl,
             \Contao\StringUtil::specialchars($strTitle),
             $strImgName

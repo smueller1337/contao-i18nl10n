@@ -1,10 +1,10 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Hook;
+namespace Blioxxx\I18nl10nBundle\Hook;
 
 /**
  * Class GetSearchablePagesHook
- * @package Verstaerker\I18nl10nBundle\Hook
+ * @package Blioxxx\I18nl10nBundle\Hook
  *
  * Get all i18nl10n pages and add them to the search index.
  * https://docs.contao.org/books/api/extensions/hooks/getSearchablePages.html

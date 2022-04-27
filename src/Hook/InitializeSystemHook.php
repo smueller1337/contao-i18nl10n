@@ -1,16 +1,16 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Hook;
+namespace Blioxxx\I18nl10nBundle\Hook;
 
 use Contao\Input;
 use Contao\System;
 use Symfony\Component\HttpFoundation\Request;
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
-use Verstaerker\I18nl10nBundle\Exception\NoRootPageException;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Exception\NoRootPageException;
 
 /**
  * Class InitializeSystemHook
- * @package Verstaerker\I18nl10nBundle\Hook
+ * @package Blioxxx\I18nl10nBundle\Hook
  *
  * Implementation of i18nl10n search logic.
  */

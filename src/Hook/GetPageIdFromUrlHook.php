@@ -1,13 +1,13 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Hook;
+namespace Blioxxx\I18nl10nBundle\Hook;
 
 use Contao\CoreBundle\Exception\PageNotFoundException;
-use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
+use Blioxxx\I18nl10nBundle\Classes\I18nl10n;
 
 /**
  * Class GetPageIdFromUrlHook
- * @package Verstaerker\I18nl10nBundle\Hook
+ * @package Blioxxx\I18nl10nBundle\Hook
  *
  * Translate the i18nl10n URL fragments to their corresponding parent counterpart with language parameter.
  * https://docs.contao.org/books/api/extensions/hooks/getPageIdFromUrl.html

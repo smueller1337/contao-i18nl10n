@@ -1,4 +1,4 @@
-<?php $this->import('Verstaerker\I18nl10nBundle\Classes\I18nl10nFrontend', 'I18nl10n'); ?>
+<?php $this->import('Blioxxx\I18nl10nBundle\Classes\I18nl10nFrontend', 'I18nl10n'); ?>
 <ul class="<?= $this->level; ?>">
     <?php foreach ($this->I18nl10n->i18nl10nNavItems($this->items) as $item): ?>
         <?php if ($item['isActive']): ?>

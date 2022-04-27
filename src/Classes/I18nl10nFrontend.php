@@ -12,7 +12,7 @@
  * @license     LGPLv3 http://www.gnu.org/licenses/lgpl-3.0.html
  */
 
-namespace Verstaerker\I18nl10nBundle\Classes;
+namespace Blioxxx\I18nl10nBundle\Classes;
 
 use Contao\Controller;
 use Contao\PageModel;

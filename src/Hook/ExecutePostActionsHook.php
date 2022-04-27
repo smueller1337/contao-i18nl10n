@@ -1,10 +1,10 @@
 <?php
 
-namespace Verstaerker\I18nl10nBundle\Hook;
+namespace Blioxxx\I18nl10nBundle\Hook;
 
 /**
  * Class ExecutePostActionsHook
- * @package Verstaerker\I18nl10nBundle\Hook
+ * @package Blioxxx\I18nl10nBundle\Hook
  *
  * https://docs.contao.org/books/api/extensions/hooks/executePostActions.html
  */
