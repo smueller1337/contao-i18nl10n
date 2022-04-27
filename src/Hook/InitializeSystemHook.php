@@ -49,10 +49,7 @@ class InitializeSystemHook extends System
         //$userLanguage = $this->request->getLocale();
         $userLanguage = "de";
 
-        if (Input::get('debug') == "1") {
-            print_r($arrLanguages);
-            print_r($userLanguage);
-        }
+        print_r($this->request->getLocale());
 
 
         // Fail if no languages were configured
@@ -62,13 +59,10 @@ class InitializeSystemHook extends System
 
         // Fallback to default language if language of request does not exist
         $languages = $arrLanguages[$_SERVER['HTTP_HOST']] ?: $arrLanguages['*'];
-        print_r($languages);
         if (!\in_array($userLanguage, $languages['languages'])) {
             $GLOBALS['TL_LANGUAGE'] = $languages['default'];
         } else {
             $GLOBALS['TL_LANGUAGE'] = $userLanguage;
         }
-
-        print_r($GLOBALS['TL_LANGUAGE']);
     }
 }
