@@ -500,8 +500,6 @@ class tl_page_l10n extends tl_page
                 $GLOBALS['TL_DCA']['tl_page']['palettes']['root']
             );
         }
-
-        print_r($GLOBALS['TL_DCA']['tl_page']['palettes']['root']);
     }
 
     /**
