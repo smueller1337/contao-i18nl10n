@@ -1,6 +1,6 @@
 {
-  "name": "exploreimpact/contao-i18nl10n",
-  "type":"contao-bundle",
+  "name": "blioxxx/contao-i18nl10n",
+  "type": "symfony-bundle",
   "description": "The simplest way to create and manage multi-language sites with Contao.",
   "keywords": [
     "Language",
@@ -9,26 +9,11 @@
     "L10N",
     "Translation"
   ],
-  "homepage": "https://exploreimpact.de",
+  "homepage": "https://www.pirok.net",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Claudio De Facci",
-      "email": "claudio@exploreimpact.de",
-      "homepage": "https://exploreimpact.de",
-      "role": "Developer"
-    },
-    {
-      "name": "Patric Eberle",
-      "email": "line-in@derverstaerker.ch",
-      "homepage": "http://www.derverstaerker.ch",
-      "role": "Developer"
-    }
-  ],
   "require": {
-    "php": "^5.6|^7.0",
-    "contao/core-bundle": "^4.4",
-    "contao-community-alliance/composer-plugin": "*",
+    "php": "^7.3",
+    "contao/core-bundle": "^4.9",
     "menatwork/contao-multicolumnwizard": "^3.3.12"
   },
   "require-dev": {
@@ -57,5 +42,12 @@
   },
   "extra":{
     "contao-manager-plugin": "Verstaerker\\I18nl10nBundle\\ContaoManager\\Plugin"
+  },
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": true,
+      "contao/manager-plugin": true,
+      "contao-community-alliance/composer-plugin": true
+    }
   }
 }
