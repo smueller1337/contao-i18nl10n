@@ -13,6 +13,11 @@
 
 namespace Verstaerker\I18nl10nBundle\Modules;
 
+use Contao\BackendTemplate;
+use Contao\Database;
+use Contao\Input;
+use Contao\Module;
+use Contao\System;
 use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
 
 /**
@@ -23,7 +28,7 @@ use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
  *
  * @author     Patric Eberle <line-in@derverstaerker.ch>
  */
-class ModuleI18nl10nLanguageSelection extends \Module
+class ModuleI18nl10nLanguageSelection extends Module
 {
     /**
      * Module wrapper template
@@ -40,7 +45,7 @@ class ModuleI18nl10nLanguageSelection extends \Module
     public function generate()
     {
         if (TL_MODE == 'BE') {
-            $objTemplate = new \BackendTemplate('be_wildcard');
+            $objTemplate = new BackendTemplate('be_wildcard');
 
             $objTemplate->wildcard = '### '
                 . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['i18nl10n_languageSelection'][0])
@@ -86,7 +91,7 @@ class ModuleI18nl10nLanguageSelection extends \Module
                 AND language IN ( '" . implode("', '", $arrLanguages['languages']) . "' )
                " . $sqlPublishedCondition;
 
-        $arrTranslations = \Database::getInstance()
+        $arrTranslations = Database::getInstance()
             ->prepare($sql)
             ->execute($objPage->id)
             ->fetchAllassoc();
@@ -146,7 +151,7 @@ class ModuleI18nl10nLanguageSelection extends \Module
                         && is_array($GLOBALS['TL_HOOKS']['i18nl10nUpdateLanguageSelectionItem'])
                     ) {
                         foreach ($GLOBALS['TL_HOOKS']['i18nl10nUpdateLanguageSelectionItem'] as $callback) {
-                            $stdClass = \System::importStatic($callback[0]);
+                            $stdClass = System::importStatic($callback[0]);
                             $item = $stdClass::{$callback[1]}($item);
                         }
                     }
@@ -167,7 +172,7 @@ class ModuleI18nl10nLanguageSelection extends \Module
             $items[0]['class']     = trim($items[0]['class'] . ' first');
             $items[$last]['class'] = trim($items[$last]['class'] . ' last');
 
-            $objTemplate = new \BackendTemplate($this->i18nl10n_langTpl);
+            $objTemplate = new BackendTemplate($this->i18nl10n_langTpl);
 
             $objTemplate->type      = get_class($this);
             $objTemplate->items     = $items;
@@ -194,7 +199,7 @@ class ModuleI18nl10nLanguageSelection extends \Module
             if ($key === 'id') {
                 continue;
             }
-            $strUriParams .= '/' . $key . '/' . \Input::get($key);
+            $strUriParams .= '/' . $key . '/' . Input::get($key);
         }
 
         $this->Template->items = !empty($items) && isset($objTemplate) ? $objTemplate->parse() : '';

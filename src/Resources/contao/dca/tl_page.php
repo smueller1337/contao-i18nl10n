@@ -1,4 +1,5 @@
 <?php
+
 /**
  * i18nl10n Contao Module
  *
@@ -11,6 +12,8 @@
  * @license     LGPLv3 http://www.gnu.org/licenses/lgpl-3.0.html
  */
 
+use Contao\ArrayUtil;
+use Contao\Config;
 use Verstaerker\I18nl10nBundle\Classes\I18nl10n;
 
 // load language translations
@@ -19,8 +22,7 @@ $this->loadLanguageFile('languages');
 /**
  * Table tl_page
  */
-$GLOBALS['TL_DCA']['tl_page']['list']['operations']['page_i18nl10n'] = array
-(
+$GLOBALS['TL_DCA']['tl_page']['list']['operations']['page_i18nl10n'] = array(
     'label'           => 'L10N',
     'href'            => 'do=i18nl10n',
     'button_callback' => array('tl_page_l10n', 'editL10n')
@@ -56,49 +58,46 @@ $GLOBALS['TL_DCA']['tl_page']['config']['ondelete_callback'][] = ['tl_page_l10n'
 $GLOBALS['TL_DCA']['tl_page']['config']['oncopy_callback'][] = ['tl_page_l10n', 'onCopy'];
 
 // Insert i18nl10n fields
-\array_insert(
-    $GLOBALS['TL_DCA']['tl_page']['fields'],
-    \count($GLOBALS['TL_DCA']['tl_page']['fields']),
-    [
-        'i18nl10n_published' => [
-            'label'             => &$GLOBALS['TL_LANG']['tl_page']['i18nl10n_published'],
-            'default'           => true,
-            'exclude'           => true,
-            'inputType'         => 'checkbox',
-            'eval' => [
-                'doNotCopy'     => true,
-                'tl_class'      => 'w50',
-            ],
-            'sql'               => "char(1) NOT NULL default '1'",
-        ],
-        'i18nl10n_localizations' => [
-            'label'     => &$GLOBALS['TL_LANG']['tl_page']['i18nl10n_localizations'],
-            'exclude'   => true,
-            'inputType' => 'multiColumnWizard',
-            'eval'      => [
-                'tl_class'     => 'w50 autoheight',
-                'columnFields' => [
-                    'language' => [
-                        'label'     => &$GLOBALS['TL_LANG']['tl_page']['i18nl10n_language'],
-                        'exclude'   => true,
-                        'inputType' => 'select',
-                        'options_callback' => ['tl_page_l10n', 'languageOptions'],
-                        'eval'      => [
-                            'style'  => 'width:100%',
-                            'chosen' => true,
-                            'includeBlankOption' => true,
-                        ],
-                    ],
+$GLOBALS['TL_DCA']['tl_page']['fields']['i18nl10n_published'] = [
+    'label'             => &$GLOBALS['TL_LANG']['tl_page']['i18nl10n_published'],
+    'default'           => true,
+    'exclude'           => true,
+    'inputType'         => 'checkbox',
+    'eval' => [
+        'doNotCopy'     => true,
+        'tl_class'      => 'w50',
+    ],
+    'sql'               => "char(1) NOT NULL default '1'",
+];
+
+$GLOBALS['TL_DCA']['tl_page']['fields']['i18nl10n_localizations'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_page']['i18nl10n_localizations'],
+    'exclude'   => true,
+    'inputType' => 'multiColumnWizard',
+    'eval'      => [
+        'tl_class'     => 'w50 autoheight',
+        'columnFields' => [
+            'language' => [
+                'label'     => &$GLOBALS['TL_LANG']['tl_page']['i18nl10n_language'],
+                'exclude'   => true,
+                'inputType' => 'select',
+                'options_callback' => ['tl_page_l10n', 'languageOptions'],
+                'eval'      => [
+                    'style'  => 'width:100%',
+                    'chosen' => true,
+                    'includeBlankOption' => true,
                 ],
             ],
-            'save_callback' => [
-                ['tl_page_l10n', 'validateLocalizations'],
-            ],
-            'sql'       => "blob NULL",
         ],
-    ]
-);
+    ],
+    'save_callback' => [
+        ['tl_page_l10n', 'validateLocalizations'],
+    ],
+    'sql'       => "blob NULL",
+];
 
+// edit palette
+ArrayUtil::arrayInsert($GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'], 0, ['fallback']);
 
 /**
  * Class tl_page_l10n
@@ -184,14 +183,14 @@ class tl_page_l10n extends tl_page
             }
 
             // Check if duplicated dns values
-            if(count(array_unique($arrDns)) < count($arrDns)) {
+            if (count(array_unique($arrDns)) < count($arrDns)) {
                 \Contao\Message::addError($GLOBALS['TL_LANG']['tl_page']['msg_duplicated_dns']);
             }
         }
     }
 
     /**
-     * Automatically create a new localization upon page creation
+     * x
      * (triggered by on submit callback)
      *
      * @param \Contao\DataContainer $dc
@@ -209,7 +208,7 @@ class tl_page_l10n extends tl_page
         } else {
             // Flatten localizations
             $arrLocalizations = array_map(
-                function($value) {
+                function ($value) {
                     return $value['language'];
                 },
                 \Contao\StringUtil::deserialize($dc->activeRecord->i18nl10n_localizations)
@@ -217,7 +216,7 @@ class tl_page_l10n extends tl_page
         }
 
         // If folder urls are enabled, get only last part from alias
-        if (\Contao\Config::get('folderUrl')) {
+        if (Config::get('folderUrl')) {
             $arrAlias = explode('/', $dc->activeRecord->alias);
             $strAlias = array_pop($arrAlias);
         } else {
@@ -255,7 +254,6 @@ class tl_page_l10n extends tl_page
                     // Create folder url
                     $strFolderUrl = $objL10nParentPage->alias . '/';
                 }
-
             }
 
             $fields['alias'] = $strFolderUrl . $strAlias . '-' . $dc->activeRecord->pid . $dc->id;
@@ -358,7 +356,8 @@ class tl_page_l10n extends tl_page
      *
      * @return array
      */
-    public function languageOptions() {
+    public function languageOptions()
+    {
         $arrLanguages = $GLOBALS['TL_LANG']['LNG'];
 
         // Remove 'all' entry
@@ -368,9 +367,7 @@ class tl_page_l10n extends tl_page
         foreach ($arrLanguages as $short => $name) {
             if (\strpos($short, '_')) {
                 unset($arrLanguages[$short]);
-                $arrLanguages[
-                    \str_replace('_', '-', $short)
-                ] = $name;
+                $arrLanguages[\str_replace('_', '-', $short)] = $name;
             }
         }
 
@@ -399,9 +396,11 @@ class tl_page_l10n extends tl_page
 
         foreach ($arrValues as $key => $value) {
             // Remove empty OR duplicates OR root language
-            if (empty($value['language'])
+            if (
+                empty($value['language'])
                 || in_array($value['language'], $arrLanguages)
-                || $value['language'] === $strRootLanguage) {
+                || $value['language'] === $strRootLanguage
+            ) {
                 \array_splice($arrValues, $key, 1);
                 continue;
             }
@@ -470,7 +469,7 @@ class tl_page_l10n extends tl_page
      */
     public function extendRootPalettes()
     {
-        if(version_compare(VERSION, '4.5','>=')) {
+        if (version_compare(VERSION, '4.5', '>=')) {
             $GLOBALS['TL_DCA']['tl_page']['palettes']['root'] = str_replace(
                 'language,fallback;',
                 'language,fallback;{module_i18nl10n},i18nl10n_localizations;',
@@ -483,6 +482,8 @@ class tl_page_l10n extends tl_page
                 $GLOBALS['TL_DCA']['tl_page']['palettes']['root']
             );
         }
+
+        print_r($GLOBALS['TL_DCA']['tl_page']['palettes']['root']);
     }
 
     /**
@@ -500,7 +501,7 @@ class tl_page_l10n extends tl_page
         if ($this->User->isAdmin || $this->userHasPermissionToEditLanguage($arrArgs[0])) {
             $strButton = $this->createVendorListButton($arrVendorCallback, $arrArgs);
 
-            if( $strButton !== false ) {
+            if ($strButton !== false) {
                 return $strButton;
             }
 
