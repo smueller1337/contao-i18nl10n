@@ -6,6 +6,18 @@
 [![packagist](https://img.shields.io/packagist/v/exploreimpact/contao-i18nl10n.svg?style=flat-square)](https://packagist.org/packages/exploreimpact/contao-i18nl10n)
 [![License](https://img.shields.io/badge/License-LGPL%20v3-blue.svg?style=flat-square)](http://www.gnu.org/licenses/lgpl-3.0)
 
+**This is a fork of Blioxxx/contao-i18nl10n with updated PHP 8.1 compatibility. The rest is unchanged including everything below this in the README.md. I've bumped the version number up to 2.0.4. You can add this into your root Contao composer.json by adding a require for  "blioxxx/contao-i18nl10n": "^2.0.4" and this repository like this :
+```
+  "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/dubs10/contao-i18nl10n"
+        }
+    ]
+```
+
+
+
 **Warning: This Extension is in beta status. DO NOT USE IT ON ANY PRODUCTIVE ENVIRONMENT!**
 
 **ATTENTION: I stopped the active development of this extension. This is due to several circumstances. First of all it became increasingly harder to impossible to fix existing routing related bugs. A refactoring of this extension would take an unreasonable amount of time. Several features of the extension would even require a total overwrite of the Contao routing. From my personal perspective this extension is dead - at least until someone is able and willing to invest a lot of energy to give it another try. Maybe Contao 5 will introduce ways to revive the project.**
