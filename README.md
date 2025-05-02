@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/badge/License-LGPL%20v3-blue.svg?style=flat-square)](http://www.gnu.org/licenses/lgpl-3.0)
 
 **Note about this fork**
-This is a fork of Blioxxx/contao-i18nl10n with updated PHP 8.1 compatibility. The rest is unchanged including everything below this in the README.md. I've bumped the version number up to 2.0.4. You can add this into your root Contao composer.json by adding a require for  "blioxxx/contao-i18nl10n": "^2.0.4" and this repository like this :
+This is a fork of Blioxxx/contao-i18nl10n with updated PHP 8.1 compatibility and a couple of small bugfixes. The rest is unchanged including everything below this in the README.md. I've bumped the version number up to 2.0.4. You can add this into your root Contao composer.json by adding a require for  "blioxxx/contao-i18nl10n": "^2.0.4" and this repository like this :
 ```
   "repositories": [
         {
