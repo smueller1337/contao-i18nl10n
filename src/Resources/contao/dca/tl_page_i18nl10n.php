@@ -711,19 +711,26 @@ class tl_page_i18nl10n extends tl_page
             $varValue = \Contao\System::getContainer()->get('contao.slug.generator')->generate(\Contao\StringUtil::prepareSlug($dc->activeRecord->title), $slugOptions);
 
             // Generate folder URL aliases (see #4933)
-            if (\Contao\Config::get('folderUrl')) {
-                // Get parent page
-                $objBaseLangPage = \Contao\PageModel::findWithDetails($dc->activeRecord->pid);
+            
+            // Check to see if folder urls are enabled in the website root.
+            $root = \Contao\PageModel::findByPk(
+                \Contao\PageModel::findWithDetails($dc->activeRecord->pid)->rootId
+            );
+            
+            $folderURLsEnabled = ($root && $root->useFolderUrl);
+    
+            // Get parent page
+            $objBaseLangPage = \Contao\PageModel::findWithDetails($dc->activeRecord->pid);
 
-                // Get translation for parent page
-                $objL10nParentPage = I18nl10n::getInstance()->findL10nWithDetails($objBaseLangPage->pid, $strLanguage);
+            // Get translation for parent page
+            $objL10nParentPage = I18nl10n::getInstance()->findL10nWithDetails($objBaseLangPage->pid, $strLanguage);
 
-                // Only create folder url if parent is not root
-                if ($objL10nParentPage && $objL10nParentPage->type !== 'root') {
-                    // Create folder url
-                    $varValue = $objL10nParentPage->alias . '/' . $varValue;
-                }
+            // Only create folder url if parent is not root
+            if ($objL10nParentPage && $objL10nParentPage->type !== 'root') {
+                // Create folder url if folder urls enabled on website root
+                $varValue = $folderURLsEnabled ? $objL10nParentPage->alias . '/' . $varValue : $varValue;
             }
+            
         }
 
         $objAlias = $this->Database
