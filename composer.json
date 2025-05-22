@@ -31,6 +31,12 @@
       "email": "line-in@derverstaerker.ch",
       "homepage": "http://www.derverstaerker.ch",
       "role": "Developer"
+    },
+    {
+      "name": "Sequential IT",
+      "email": "sequential@sqtl.co.uk",
+      "homepage": "https://sqtl.co.uk",
+      "role": "Developer"
     }
   ],
   "require": {
@@ -72,5 +78,5 @@
       "contao-community-alliance/composer-plugin": true
     }
   },
-  "version": "2.0.6"
+  "version": "2.0.7"
 }
