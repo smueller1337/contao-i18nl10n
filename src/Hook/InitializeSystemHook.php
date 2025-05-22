@@ -55,11 +55,19 @@ class InitializeSystemHook extends System
         }
 
         // Fallback to default language if language of request does not exist
-        $languages = $arrLanguages[$_SERVER['HTTP_HOST']] ?: $arrLanguages['*'];
+
+        if (isset($arrLanguages[$_SERVER['HTTP_HOST']])) {
+            $languages = $arrLanguages[$_SERVER['HTTP_HOST']];
+        } elseif (isset($arrLanguages['*'])) {
+            $languages = $arrLanguages['*'];
+        } else {
+            throw new NoRootPageException('No language configuration for host or fallback');
+        }
+        
 
         // check if preferred language is in language array
         if (!\in_array($userLanguage, $languages['languages'])) {
-            $shortenUserLanugage = substr($userLanguage, 0, 2);
+            $shortenUserLanguage = substr($userLanguage, 0, 2);
 
             // check again
             if (!\in_array($shortenUserLanugage, $languages['languages'])) {
