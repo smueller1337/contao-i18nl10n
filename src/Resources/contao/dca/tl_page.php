@@ -239,14 +239,22 @@ class tl_page_l10n extends tl_page
             'datimFormat'        => $dc->activeRecord->datimFormat
         );
 
+        // Create alias based on folder url setting ?
+        // Check to see if folder urls are enabled in the website root.
+        $root = \Contao\PageModel::findByPk(
+            \Contao\PageModel::findWithDetails($dc->activeRecord->pid)->rootId
+        );
+        
+        $folderURLsEnabled = ($root && $root->useFolderUrl);
+                
         // Now make copies in each language
         foreach ($arrLocalizations as $language) {
             $strFolderUrl = '';
             $fields['sorting'] += 128;
             $fields['language'] = $language;
 
-            // Create alias based on folder url setting
-            if (\Contao\Config::get('folderUrl')) {
+
+            if ($folderURLsEnabled) {
                 // Get translation for parent page
                 $objL10nParentPage = I18nl10n::getInstance()->findL10nWithDetails($dc->activeRecord->pid, $language);
 
