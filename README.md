@@ -8,7 +8,7 @@
 
 **Note about this fork**
 This is a fork of Blioxxx/contao-i18nl10n with updated Contao 4.13 and PHP 8.1 compatibility and a couple of small bugfixes. The rest is unchanged including almost everything below this line in the README.md. 
-I've bumped the version number up to 2.0.5. You can add this into your root Contao composer.json by adding a require for  "blioxxx/contao-i18nl10n": "^2.0.4" and this repository like this :
+I've bumped the version number up each time I've done a small bugfix. You can add this into your root Contao composer.json by adding a require for  "blioxxx/contao-i18nl10n": "^2.0.4" and this repository like this :
 ```
   "repositories": [
         {
