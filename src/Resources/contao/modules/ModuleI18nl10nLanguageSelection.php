@@ -168,9 +168,10 @@ class ModuleI18nl10nLanguageSelection extends Module
             }
 
             // Add classes first and last
-            $last                  = count($items) - 1;
-            $items[0]['class']     = trim($items[0]['class'] . ' first');
-            $items[$last]['class'] = trim($items[$last]['class'] . ' last');
+            $last = count($items) - 1;
+            $items[0]['class'] = trim(($items[0]['class'] ?? '') . ' first');
+            $items[$last]['class'] = trim(($items[$last]['class'] ?? '') . ' last');
+
 
             $objTemplate = new BackendTemplate($this->i18nl10n_langTpl);
 

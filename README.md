@@ -13,7 +13,7 @@ I've bumped the version number up each time I've done a small bugfix. You can ad
   "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/dubs10/contao-i18nl10n"
+            "url": "https://github.com/smueller1337/contao-i18nl10n"
         }
     ]
 ```
