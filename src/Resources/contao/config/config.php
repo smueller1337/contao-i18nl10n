@@ -12,6 +12,20 @@
  * @license     LGPLv3 http://www.gnu.org/licenses/lgpl-3.0.html
  */
 
+
+use Contao\System;
+use Symfony\Component\HttpFoundation\Request;
+
+$TL_MODE = 'FE';
+
+if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest(
+    System::getContainer()->get('request_stack')->getCurrentRequest() ?? Request::create('/')
+)) {
+    $TL_MODE = 'BE';
+}
+define('TL_MODE', $TL_MODE);
+
+
 /**
  * BACK END MODULES
  */
