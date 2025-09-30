@@ -1,7 +1,7 @@
 {
   "name": "blioxxx/contao-i18nl10n",
-  "version": "2.1.0",
   "type": "symfony-bundle",
+  "version": "2.1.0",
   "description": "The simplest way to create and manage multi-language sites with Contao 4.9.x and newer.",
   "keywords": [
     "Language",
